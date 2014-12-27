@@ -1,0 +1,36 @@
+
+Your submission results compared to the expected:
+
+                 ACTUAL                                  EXPECTED
+────────────────────────────────────────────────────────────────────────────────
+
+   "35"                                ==    "35"
+   ""                                  ==    ""
+
+────────────────────────────────────────────────────────────────────────────────
+
+✓ Submission results match expected
+✓ Used synchronous method: fs.readFileSync()
+
+# PASS
+
+Your solution to MY FIRST I/O! passed!
+
+Here's the official solution in case you want to compare notes:
+
+────────────────────────────────────────────────────────────────────────────────
+    var fs = require('fs')
+
+    var contents = fs.readFileSync(process.argv[2])
+    var lines = contents.toString().split('\n').length-1
+    console.log(lines)
+
+    //note you can avoid the .toString() by passing 'utf8' as the
+    //second argument to readFileSync, then you'll get a String!
+    //
+    // rs.readFileSync(process.argv[2], 'utf8').split('\n').length - 1
+    
+────────────────────────────────────────────────────────────────────────────────
+
+You have 10 challenges left.
+Type `learnyounode` to show the menu.
