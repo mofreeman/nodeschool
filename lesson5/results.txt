@@ -1,0 +1,36 @@
+
+Your submission results compared to the expected:
+
+                 ACTUAL                                  EXPECTED
+────────────────────────────────────────────────────────────────────────────────
+
+   "CHANGELOG.md"                      ==    "CHANGELOG.md"
+   "LICENCE.md"                        ==    "LICENCE.md"
+   "README.md"                         ==    "README.md"
+   ""                                  ==    ""
+
+────────────────────────────────────────────────────────────────────────────────
+
+✓ Submission results match expected
+✓ Used asynchronous method: fs.readdir()
+
+# PASS
+
+Your solution to FILTERED LS passed!
+
+Here's the official solution in case you want to compare notes:
+
+────────────────────────────────────────────────────────────────────────────────
+  var fs = require('fs')
+  var path = require('path')
+
+  fs.readdir(process.argv[2], function (err, list) {
+    list.forEach(function (file) {
+      if (path.extname(file) === '.' + process.argv[3])
+        console.log(file)
+    })
+  })
+────────────────────────────────────────────────────────────────────────────────
+
+You have 8 challenges left.
+Type `learnyounode` to show the menu.
