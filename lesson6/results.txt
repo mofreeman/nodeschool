@@ -1,13 +1,13 @@
 
 Your submission results compared to the expected:
 
-                 ACTUAL                                  EXPECTED                 
+                 ACTUAL                                  EXPECTED
 ────────────────────────────────────────────────────────────────────────────────
 
-   "CHANGELOG.md"                      ==    "CHANGELOG.md"                     
-   "LICENCE.md"                        ==    "LICENCE.md"                       
-   "README.md"                         ==    "README.md"                        
-   ""                                  ==    ""                                 
+   "CHANGELOG.md"                      ==    "CHANGELOG.md"
+   "LICENCE.md"                        ==    "LICENCE.md"
+   "README.md"                         ==    "README.md"
+   ""                                  ==    ""
 
 ────────────────────────────────────────────────────────────────────────────────
 
@@ -30,41 +30,40 @@ Here's the official solution in case you want to compare notes:
 ────────────────────────────────────────────────────────────────────────────────
 solution.js:
 
-    [32mvar[39m [37mfilterFn[39m [93m=[39m [37mrequire[39m[90m([39m[92m'./solution_filter.js'[39m[90m)[39m
-    [32mvar[39m [37mdir[39m [93m=[39m [37mprocess[39m[32m.[39m[37margv[39m[33m[[39m[34m2[39m[33m][39m
-    [32mvar[39m [37mfilterStr[39m [93m=[39m [37mprocess[39m[32m.[39m[37margv[39m[33m[[39m[34m3[39m[33m][39m
-    
-    [37mfilterFn[39m[90m([39m[37mdir[39m[32m,[39m [37mfilterStr[39m[32m,[39m [94mfunction[39m [90m([39m[37merr[39m[32m,[39m [37mlist[39m[90m)[39m [33m{[39m
-      [94mif[39m [90m([39m[37merr[39m[90m)[39m
-        [31mreturn[39m [34mconsole[39m[32m.[39m[91merror[39m[90m([39m[92m'There was an error:'[39m[32m,[39m [37merr[39m[90m)[39m
-    
-      [37mlist[39m[32m.[39m[37mforEach[39m[90m([39m[94mfunction[39m [90m([39m[37mfile[39m[90m)[39m [33m{[39m
-        [34mconsole[39m[32m.[39m[34mlog[39m[90m([39m[37mfile[39m[90m)[39m
-      [33m}[39m[90m)[39m
-    [33m}[39m[90m)[39m
+    var filterFn = require('./solution_filter.js')
+    var dir = process.argv[2]
+    var filterStr = process.argv[3]
+
+    filterFn(dir, filterStr, function (err, list) {
+      if (err)
+        return console.error('There was an error:', err)
+
+      list.forEach(function (file) {
+        console.log(file)
+      })
+    })
 
 ────────────────────────────────────────────────────────────────────────────────
 solution_filter.js:
 
-    [32mvar[39m [37mfs[39m [93m=[39m [37mrequire[39m[90m([39m[92m'fs'[39m[90m)[39m
-    [32mvar[39m [37mpath[39m [93m=[39m [37mrequire[39m[90m([39m[92m'path'[39m[90m)[39m
-    
-    [37mmodule[39m[32m.[39m[37mexports[39m [93m=[39m [94mfunction[39m [90m([39m[37mdir[39m[32m,[39m [37mfilterStr[39m[32m,[39m [37mcallback[39m[90m)[39m [33m{[39m
-    
-      [37mfs[39m[32m.[39m[37mreaddir[39m[90m([39m[37mdir[39m[32m,[39m [94mfunction[39m [90m([39m[37merr[39m[32m,[39m [37mlist[39m[90m)[39m [33m{[39m
-        [94mif[39m [90m([39m[37merr[39m[90m)[39m
-          [31mreturn[39m [37mcallback[39m[90m([39m[37merr[39m[90m)[39m
-    
-        [37mlist[39m [93m=[39m [37mlist[39m[32m.[39m[37mfilter[39m[90m([39m[94mfunction[39m [90m([39m[37mfile[39m[90m)[39m [33m{[39m
-          [31mreturn[39m [37mpath[39m[32m.[39m[37mextname[39m[90m([39m[37mfile[39m[90m)[39m [93m===[39m [92m'.'[39m [93m+[39m [37mfilterStr[39m
-        [33m}[39m[90m)[39m
-    
-        [37mcallback[39m[90m([39m[90mnull[39m[32m,[39m [37mlist[39m[90m)[39m
-      [33m}[39m[90m)[39m
-    [33m}[39m
+    var fs = require('fs')
+    var path = require('path')
+
+    module.exports = function (dir, filterStr, callback) {
+
+      fs.readdir(dir, function (err, list) {
+        if (err)
+          return callback(err)
+
+        list = list.filter(function (file) {
+          return path.extname(file) === '.' + filterStr
+        })
+
+        callback(null, list)
+      })
+    }
 
 ────────────────────────────────────────────────────────────────────────────────
 
 You have 7 challenges left.
 Type `learnyounode` to show the menu.
-
