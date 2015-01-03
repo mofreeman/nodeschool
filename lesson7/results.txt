@@ -1,0 +1,42 @@
+
+Your submission results compared to the expected:
+
+                 ACTUAL                                  EXPECTED
+────────────────────────────────────────────────────────────────────────────────
+
+   "True blue"                         ==    "True blue"
+   "Dob"                               ==    "Dob"
+   "Stubby"                            ==    "Stubby"
+   "Boogie board"                      ==    "Boogie board"
+   "Shonky"                            ==    "Shonky"
+   "Tucker"                            ==    "Tucker"
+   "Donger"                            ==    "Donger"
+   "Brizzie"                           ==    "Brizzie"
+   "Ciggies"                           ==    "Ciggies"
+   "Oldies"                            ==    "Oldies"
+   ""                                  ==    ""
+
+────────────────────────────────────────────────────────────────────────────────
+
+✓ Submission results match expected
+
+# PASS
+
+Your solution to HTTP CLIENT passed!
+
+Here's the official solution in case you want to compare notes:
+
+────────────────────────────────────────────────────────────────────────────────
+
+    var http = require('http')
+
+    http.get(process.argv[2], function (response) {
+      response.setEncoding('utf8')
+      response.on('data', console.log)
+      response.on('error', console.error)
+    })
+
+────────────────────────────────────────────────────────────────────────────────
+
+You have 6 challenges left.
+Type `learnyounode` to show the menu.
