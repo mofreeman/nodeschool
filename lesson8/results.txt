@@ -1,0 +1,46 @@
+
+Your submission results compared to the expected:
+
+────────────────────────────────────────────────────────────────────────────────
+
+1.    ACTUAL:  "311"
+1.  EXPECTED:  "311"
+
+2.    ACTUAL:  "Grab us a lurk bloody trent from punchy strides. Stands out like a stickybeak with come a g'day. As dry as a gyno where as cunning as a bundy."
+2.  EXPECTED:  "Grab us a lurk bloody trent from punchy strides. Stands out like a stickybeak with come a g'day. As dry as a gyno where as cunning as a bundy."
+
+3.    ACTUAL:  "Grab us a slab piece of piss as cunning as a spit the dummy. She'll be right sickie flamin flat out like a blue. She'll be right bushranger piece of piss come a crook. "
+3.  EXPECTED:  "Grab us a slab piece of piss as cunning as a spit the dummy. She'll be right sickie flamin flat out like a blue. She'll be right bushranger piece of piss come a crook. "
+
+4.    ACTUAL:  ""
+4.  EXPECTED:  ""
+
+
+────────────────────────────────────────────────────────────────────────────────
+
+✓ Submission results match expected
+
+# PASS
+
+Your solution to HTTP COLLECT passed!
+
+Here's the official solution in case you want to compare notes:
+
+────────────────────────────────────────────────────────────────────────────────
+    var http = require('http')
+    var bl = require('bl')
+
+    http.get(process.argv[2], function (response) {
+      response.pipe(bl(function (err, data) {
+        if (err)
+          return console.error(err)
+        data = data.toString()
+        console.log(data.length)
+        console.log(data)
+      }))
+    })
+
+────────────────────────────────────────────────────────────────────────────────
+
+You have 5 challenges left.
+Type `learnyounode` to show the menu.
