@@ -1,0 +1,61 @@
+
+Your submission results compared to the expected:
+
+────────────────────────────────────────────────────────────────────────────────
+
+1.    ACTUAL:  "As stands out like bazza with mad as a barbie. Come a bundy also as dry as a barrack. Lets throw a sanger my as dry as a throw-down. Grab us a true blue piece of piss shazza got us some cockie. As busy as a bunyip flamin watch out for the grouse. "
+1.  EXPECTED:  "As stands out like bazza with mad as a barbie. Come a bundy also as dry as a barrack. Lets throw a sanger my as dry as a throw-down. Grab us a true blue piece of piss shazza got us some cockie. As busy as a bunyip flamin watch out for the grouse. "
+
+2.    ACTUAL:  "Built like a ambo no worries grab us a yobbo. As cunning as a dunny no dramas shazza got us some middy. Lets get some wuss piece of piss as cunning as a dill. Come a battler how shazza got us some whinge. She'll be right bodgy flamin as cross as a turps. "
+2.  EXPECTED:  "Built like a ambo no worries grab us a yobbo. As cunning as a dunny no dramas shazza got us some middy. Lets get some wuss piece of piss as cunning as a dill. Come a battler how shazza got us some whinge. She'll be right bodgy flamin as cross as a turps. "
+
+3.    ACTUAL:  "We're going grundies and as dry as a icy pole. She'll be right cark it how watch out for the hottie. It'll be pretty spiffy no dramas you little ripper stoked. As busy as a bundy heaps as cunning as a gobful. As cross as a rotten no dramas he's got a massive barrack. "
+3.  EXPECTED:  "We're going grundies and as dry as a icy pole. She'll be right cark it how watch out for the hottie. It'll be pretty spiffy no dramas you little ripper stoked. As busy as a bundy heaps as cunning as a gobful. As cross as a rotten no dramas he's got a massive barrack. "
+
+4.    ACTUAL:  ""
+4.  EXPECTED:  ""
+
+
+────────────────────────────────────────────────────────────────────────────────
+
+✓ Submission results match expected
+
+# PASS
+
+Your solution to JUGGLING ASYNC passed!
+
+Here's the official solution in case you want to compare notes:
+
+────────────────────────────────────────────────────────────────────────────────
+    var http = require('http')
+    var bl = require('bl')
+    var results = []
+    var count = 0
+
+    function printResults () {
+      for (var i = 0; i < 3; i++)
+        console.log(results[i])
+    }
+
+    function httpGet (index) {
+      http.get(process.argv[2 + index], function (response) {
+        response.pipe(bl(function (err, data) {
+          if (err)
+            return console.error(err)
+
+          results[index] = data.toString()
+          count++
+
+          if (count == 3) // yay! we are the last one!
+            printResults()
+        }))
+      })
+    }
+
+    for (var i = 0; i < 3; i++)
+      httpGet(i)
+
+────────────────────────────────────────────────────────────────────────────────
+
+You have 4 challenges left.
+Type `learnyounode` to show the menu.

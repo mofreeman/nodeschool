@@ -1,0 +1,14 @@
+{
+  "name": "lesson9",
+  "version": "0.0.0",
+  "description": "nodeschool's learnyounode lesson9",
+  "main": "program.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mofreeman",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "bl": "~0.9.3"
+  }
+}
