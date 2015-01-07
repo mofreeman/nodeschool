@@ -1,0 +1,15 @@
+{
+  "name": "lesson12",
+  "version": "0.0.0",
+  "description": "nodeschool's learnyounode lesson12 solution",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "mofreeman",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "through2-map": "~1.4.0"
+  }
+}
