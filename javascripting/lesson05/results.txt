@@ -1,0 +1,16 @@
+
+m@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@     YOUR SOLUTION IS CORRECT      @@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+-------------------
+# YES, PIZZA IS WONDERFUL.
+
+Well done, with that .replace() method!
+
+Next we will explore numbers.
+
+Run javascripting in the console to choose the next challenge.
+
+-------------------
+
