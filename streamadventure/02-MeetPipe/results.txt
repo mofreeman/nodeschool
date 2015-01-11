@@ -1,0 +1,26 @@
+ACTUAL                             EXPECTED
+------                             --------
+"Empty Child plague"               "Empty Child plague"          
+"Ganger"                           "Ganger"                      
+"Uxariean"                         "Uxariean"                    
+"Abaddon"                          "Abaddon"                     
+"Pan-babylonian"                   "Pan-babylonian"              
+"Time Beetle"                      "Time Beetle"                 
+"Dauntless Prison inmates"         "Dauntless Prison inmates"    
+"Vishklar"                         "Vishklar"                    
+"Red Leech"                        "Red Leech"                   
+"Gee-jee fly"                      "Gee-jee fly"                 
+""                                 ""                            
+# PASS
+
+Your solution to MEET PIPE passed!
+
+Here's what the official solution is if you want to compare notes:
+
+    var fs = require('fs');
+    var file = process.argv[2];
+    fs.createReadStream(file).pipe(process.stdout);
+    
+You have 13 challenges left.
+Type `stream-adventure` to show the menu.
+
