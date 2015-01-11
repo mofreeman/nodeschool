@@ -1,0 +1,27 @@
+ACTUAL                             EXPECTED
+------                             --------
+"CRESPALLION"                      "CRESPALLION"                 
+"ARGOLIN"                          "ARGOLIN"                     
+"EMPTY CHILD PLAGUE"               "EMPTY CHILD PLAGUE"          
+"GEE-JEE FLY"                      "GEE-JEE FLY"                 
+"ARCTURAN"                         "ARCTURAN"                    
+"NESTENE CONSCIOUSNESS"            "NESTENE CONSCIOUSNESS"       
+"FAIRY"                            "FAIRY"                       
+"RUTAN"                            "RUTAN"                       
+"PLASMAVORE"                       "PLASMAVORE"                  
+""                                 ""                            
+# PASS
+
+Your solution to TRANSFORM passed!
+
+Here's what the official solution is if you want to compare notes:
+
+    var through = require('through');
+    var tr = through(function (buf) {
+        this.queue(buf.toString().toUpperCase());
+    });
+    process.stdin.pipe(tr).pipe(process.stdout);
+    
+You have 11 challenges left.
+Type `stream-adventure` to show the menu.
+

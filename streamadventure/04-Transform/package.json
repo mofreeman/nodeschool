@@ -1,0 +1,14 @@
+{
+  "name": "04-Transform",
+  "version": "1.0.0",
+  "description": "nodeschool.io's stream-adventure lesson 04",
+  "main": "program.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mofreeman",
+  "license": "ISC",
+  "dependencies": {
+    "through": "^2.3.6"
+  }
+}
