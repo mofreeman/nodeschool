@@ -1,0 +1,23 @@
+ACTUAL                             EXPECTED
+------                             --------
+"Gubbage cone"                     "Gubbage cone"                
+"Peg doll"                         "Peg doll"                    
+"Celestial Toymaker"               "Celestial Toymaker"          
+"Aridian"                          "Aridian"                     
+"Xylok"                            "Xylok"                       
+"Red Leech"                        "Red Leech"                   
+"Haemo-Goth"                       "Haemo-Goth"                  
+"Krarg"                            "Krarg"                       
+"Drornidian"                       "Drornidian"                  
+""                                 ""                            
+# PASS
+
+Your solution to INPUT OUTPUT passed!
+
+Here's what the official solution is if you want to compare notes:
+
+    process.stdin.pipe(process.stdout);
+    
+You have 12 challenges left.
+Type `stream-adventure` to show the menu.
+
