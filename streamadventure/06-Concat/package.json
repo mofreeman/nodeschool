@@ -1,0 +1,14 @@
+{
+  "name": "06-Concat",
+  "version": "1.0.0",
+  "description": "lesson 06-concat from stream-adventure by nodeschool.com",
+  "main": "program.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mofreeman",
+  "license": "ISC",
+  "dependencies": {
+    "concat-stream": "^1.4.7"
+  }
+}

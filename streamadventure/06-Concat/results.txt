@@ -1,0 +1,31 @@
+ACTUAL                             EXPECTED
+------                             --------
+"Every pebble in the village"      "Every pebble in the village" 
+"heard the radiometric clamor"     "heard the radiometric clamor"
+"from the town square. Looking"     "from the town square. Looking"
+"zestily into the distance,"       "zestily into the distance,"  
+"Constable Franklin consumed"      "Constable Franklin consumed" 
+"his digital periscope to"         "his digital periscope to"    
+"locate the piercing source."      "locate the piercing source." 
+"Unwittingly, a nearby"            "Unwittingly, a nearby"       
+"microwave yawnily emitted"        "microwave yawnily emitted"   
+"high-velocity unhelpful"          "high-velocity unhelpful"     
+"particles."                       "particles."                  
+""                                 ""                            
+""                                 ""                            
+# PASS
+
+Your solution to CONCAT passed!
+
+Here's what the official solution is if you want to compare notes:
+
+    var concat = require('concat-stream');
+    
+    process.stdin.pipe(concat(function (src) {
+        var s = src.toString().split('').reverse().join('');
+        console.log(s);
+    }));
+    
+You have 9 challenges left.
+Type `stream-adventure` to show the menu.
+
