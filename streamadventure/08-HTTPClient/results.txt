@@ -1,0 +1,25 @@
+ACTUAL                             EXPECTED
+------                             --------
+"uj"                               "uj"                          
+"yc"                               "yc"                          
+"gcand"                            "gcand"                       
+"yedx"                             "yedx"                        
+"neb"                              "neb"                         
+"yc"                               "yc"                          
+"mcd"                              "mcd"                         
+"dxc"                              "dxc"                         
+"en"                               "en"                          
+""                                 ""                            
+# PASS
+
+Your solution to HTTP CLIENT passed!
+
+Here's what the official solution is if you want to compare notes:
+
+    var request = require('request');
+    var r = request.post('http://localhost:8000');
+    process.stdin.pipe(r).pipe(process.stdout);
+    
+You have 7 challenges left.
+Type `stream-adventure` to show the menu.
+
