@@ -1,10 +1,6 @@
 var concat = require('concat-stream');
 
-process.stdin
-    .pipe(concat(function(text) {
-        //console.log(text.toString());
+process.stdin.pipe(concat(function(text) {
         var result = text.toString().split('').reverse().join('');
         console.log(result);
- //       this.queue(result  + '\n');
     }))
-//    .pipe(process.stdout);
