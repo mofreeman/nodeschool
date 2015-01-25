@@ -1,0 +1,44 @@
+ACTUAL                             EXPECTED
+------                             --------
+"BURGEON."                         "BURGEON."                    
+"IT'S"                             "IT'S"                        
+"MEANT"                            "MEANT"                       
+"MILLIEMS"                         "MILLIEMS"                    
+"OF"                               "OF"                          
+"CENTIMENTS"                       "CENTIMENTS"                  
+"DEADLOST"                         "DEADLOST"                    
+"OR"                               "OR"                          
+"MISLAID"                          "MISLAID"                     
+"ON"                               "ON"                          
+"THEM"                             "THEM"                        
+"BUT,"                             "BUT,"                        
+"MASTER"                           "MASTER"                      
+"OF"                               "OF"                          
+"SNAKES,"                          "SNAKES,"                     
+"WE"                               "WE"                          
+"CAN"                              "CAN"                         
+"SLOUGHCHANGE"                     "SLOUGHCHANGE"                
+"IN"                               "IN"                          
+"THE"                              "THE"                         
+""                                 ""                            
+# PASS
+
+Your solution to HTTP SERVER passed!
+
+Here's what the official solution is if you want to compare notes:
+
+    var http = require('http');
+    var through = require('through');
+    
+    var server = http.createServer(function (req, res) {
+        if (req.method === 'POST') {
+            req.pipe(through(function (buf) {
+                this.queue(buf.toString().toUpperCase());
+            })).pipe(res);
+        }
+        else res.end('send me a POST\n');
+    });
+    server.listen(parseInt(process.argv[2]));
+    
+You have 8 challenges left.
+Type `stream-adventure` to show the menu.
