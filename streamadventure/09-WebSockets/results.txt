@@ -1,0 +1,22 @@
+################################################
+#                                              #
+# Open http://localhost:8000 to run your code! #
+#                                              #
+################################################
+
+ACTUAL                             EXPECTED
+------                             --------
+""                                 ""                            
+# PASS
+
+Your solution to WEBSOCKETS passed!
+
+Here's what the official solution is if you want to compare notes:
+
+    var ws = require('websocket-stream');
+    var stream = ws('ws://localhost:8000');
+    stream.end('hello\n');
+    
+You have 6 challenges left.
+Type `stream-adventure` to show the menu.
+

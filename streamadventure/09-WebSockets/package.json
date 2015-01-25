@@ -1,0 +1,14 @@
+{
+  "name": "09-WebSockets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "program.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mofreeman",
+  "license": "ISC",
+  "dependencies": {
+    "websocket-stream": "^1.3.2"
+  }
+}
