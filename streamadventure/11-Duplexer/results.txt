@@ -1,0 +1,35 @@
+[00mACTUAL                             EXPECTED
+------                             --------
+[38;5;46m"zmmjcyl"                          "zmmjcyl"                     
+[38;5;46m"zyxyyp"                           "zyxyyp"                      
+[38;5;46m"zccn"                             "zccn"                        
+[38;5;46m"zwrc"                             "zwrc"                        
+[38;5;46m"zmmjcyl"                          "zmmjcyl"                     
+[38;5;46m"zccr"                             "zccr"                        
+[38;5;46m"zgrc"                             "zgrc"                        
+[38;5;46m"zmv"                              "zmv"                         
+[38;5;46m"zmv"                              "zmv"                         
+[38;5;46m"zccn"                             "zccn"                        
+[38;5;46m"zyr"                              "zyr"                         
+[38;5;46m"zjgn"                             "zjgn"                        
+[38;5;46m"zgqasgr"                          "zgqasgr"                     
+[38;5;46m"zsqr"                             "zsqr"                        
+[38;5;46m""                                 ""                            
+[38;5;46m""                                 ""                            
+[00m# PASS
+
+Your solution to DUPLEXER passed!
+
+Here's what the official solution is if you want to compare notes:
+
+    var spawn = require('child_process').spawn;
+    var duplexer = require('duplexer');
+    
+    module.exports = function (cmd, args) {
+        var ps = spawn(cmd, args);
+        return duplexer(ps.stdin, ps.stdout);
+    };
+    
+You have 4 challenges left.
+Type `stream-adventure` to show the menu.
+
