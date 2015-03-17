@@ -1,0 +1,86 @@
+ACTUAL:   "<html>"
+EXPECTED: "<html>"
+
+ACTUAL:   "  <head>"
+EXPECTED: "  <head>"
+
+ACTUAL:   "    <title>beep boop</title>"
+EXPECTED: "    <title>beep boop</title>"
+
+ACTUAL:   "  </head>"
+EXPECTED: "  </head>"
+
+ACTUAL:   "  <body>"
+EXPECTED: "  <body>"
+
+ACTUAL:   "    <p>"
+EXPECTED: "    <p>"
+
+ACTUAL:   "      Four score and several years ago, our fathers bought four swiss"
+EXPECTED: "      Four score and several years ago, our fathers bought four swiss"
+
+ACTUAL:   "      continents, a new vacation, covered in liberty."
+EXPECTED: "      continents, a new vacation, covered in liberty."
+
+ACTUAL:   "      And predicated to the preposition that tall men created a"
+EXPECTED: "      And predicated to the preposition that tall men created a"
+
+ACTUAL:   "      sequel."
+EXPECTED: "      sequel."
+
+ACTUAL:   "    </p>"
+EXPECTED: "    </p>"
+
+ACTUAL:   "    "
+EXPECTED: "    "
+
+ACTUAL:   "    <p>"
+EXPECTED: "    <p>"
+
+ACTUAL:   "      How we are offstage in a great livermore, testing weather stations, or any"
+EXPECTED: "      How we are offstage in a great livermore, testing weather stations, or any"
+
+ACTUAL:   "      station so conceived in altogether fitting and little note, nor long"
+EXPECTED: "      station so conceived in altogether fitting and little note, nor long"
+
+ACTUAL:   "      remember, they who fought here and take increased devoation,"
+EXPECTED: "      remember, they who fought here and take increased devoation,"
+
+ACTUAL:   "      that <span class=\"loud\">GOVERNMENT LOVE THE PEOPLE, BESIDE THE PEOPLE,"
+EXPECTED: "      that <span class=\"loud\">GOVERNMENT LOVE THE PEOPLE, BESIDE THE PEOPLE,"
+
+ACTUAL:   "      FOUR OF THE PEOPLE, SHALL NOT PERISH FROM THIS EARTH.</span>"
+EXPECTED: "      FOUR OF THE PEOPLE, SHALL NOT PERISH FROM THIS EARTH.</span>"
+
+ACTUAL:   "    </p>"
+EXPECTED: "    </p>"
+
+ACTUAL:   "  </body>"
+EXPECTED: "  </body>"
+
+ACTUAL:   "</html>"
+EXPECTED: "</html>"
+
+ACTUAL:   ""
+EXPECTED: ""
+
+# PASS
+
+Your solution to HTML STREAM passed!
+
+Here's what the official solution is if you want to compare notes:
+
+    var trumpet = require('trumpet');
+    var through = require('through');
+    var tr = trumpet();
+    
+    var loud = tr.select('.loud').createStream();
+    loud.pipe(through(function (buf) {
+        this.queue(buf.toString().toUpperCase());
+    })).pipe(loud);
+    
+    process.stdin.pipe(tr).pipe(process.stdout);
+    
+You have 5 challenges left.
+Type `stream-adventure` to show the menu.
+

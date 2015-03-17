@@ -1,0 +1,15 @@
+{
+  "name": "10-HTMLStream",
+  "version": "1.0.0",
+  "description": "",
+  "main": "program.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mofreeman",
+  "license": "ISC",
+  "dependencies": {
+    "through": "^2.3.6",
+    "trumpet": "^1.7.0"
+  }
+}
